@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2c3e50; /* Dark background */
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .success-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 450px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #1abc9c;
+            margin-bottom: 20px;
+            animation: slideIn 1s forwards;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 1s 0.5s forwards; /* Fade in with a delay */
+        }
+
+        .icon {
+            font-size: 60px;
+            color: #1abc9c;
+            animation: bounce 1s infinite; /* Add bounce animation */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button:hover {
+            background-color: #16a085;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="success-container">
+    <i class="fas fa-check-circle icon"></i>
+    <h1>Payment Successful!</h1>
+    <p>Your payment has been processed successfully.</p>
+    <p>A receipt has been sent to your email.</p>
+    <a href="index.html" class="back-button">Go Back</a>
+    <div class="footer">© 2024 NexusSec. All rights reserved.</div>
+</div>
+
+<!-- Replace 'your-sound-file.mp3' with the actual path to your sound file -->
+<audio id="successSound" src="sound.mp3" preload="auto"></audio> 
+
+<script>
+    // Play sound on page load
+    window.onload = function() {
+        document.getElementById('successSound').play();
+    };
+</script>
+
+</body>
+</html>
